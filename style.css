@@ -1,0 +1,411 @@
+:root {
+  --primary-red: #9c1018;
+  --secondary-red: #c61d24;
+  --orange: #e65b21;
+  --dark: #1f1f1f;
+  --cream: #f7f2ea;
+  --white: #ffffff;
+  --gray: #666666;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* ======================
+   HEADER
+====================== */
+
+.site-header {
+  background: rgba(247,242,234,0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand img {
+  height: 75px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primary-red);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--orange);
+}
+
+.nav-call {
+  text-decoration: none;
+  background: var(--primary-red);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 30px;
+  color: var(--primary-red);
+  cursor: pointer;
+}
+
+/* ======================
+   HERO
+====================== */
+
+.hero {
+  min-height: 85vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 50px 20px;
+
+  background:
+    linear-gradient(
+      rgba(247,242,234,0.92),
+      rgba(247,242,234,0.92)
+    ),
+    url("assets/logo.png");
+
+  background-size: 450px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.eyebrow {
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 78px);
+  line-height: 1.1;
+  margin: 20px 0;
+  color: var(--primary-red);
+}
+
+.hero p {
+  font-size: 22px;
+  max-width: 750px;
+  margin: auto;
+  color: var(--gray);
+}
+
+.hero-actions {
+  margin-top: 35px;
+
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 15px 28px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--orange),
+    var(--primary-red)
+  );
+  color: white;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary-red);
+  color: var(--primary-red);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-red);
+  color: white;
+}
+
+/* ======================
+   SECTIONS
+====================== */
+
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 25px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-heading h2 {
+  font-size: 46px;
+  margin: 15px 0;
+  color: var(--primary-red);
+}
+
+.section-heading p {
+  max-width: 700px;
+  margin: auto;
+  color: var(--gray);
+}
+
+/* ======================
+   SERVICES
+====================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+  border-top: 5px solid var(--orange);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: var(--primary-red);
+}
+
+/* ======================
+   WHY US
+====================== */
+
+.dark-section {
+  max-width: 100%;
+  background: var(--primary-red);
+  color: white;
+}
+
+.dark-section h2 {
+  color: white;
+}
+
+.light {
+  color: #ffd5b3;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.features strong {
+  display: block;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.features span {
+  font-size: 18px;
+}
+
+/* ======================
+   SERVICE AREAS
+====================== */
+
+.area-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.area-list span {
+  background: white;
+  padding: 14px 22px;
+  border-radius: 50px;
+  box-shadow: var(--shadow);
+  font-weight: 600;
+}
+
+/* ======================
+   CONTACT
+====================== */
+
+.contact-form {
+  max-width: 700px;
+  margin: auto;
+
+  display: grid;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background: linear-gradient(
+    135deg,
+    var(--orange),
+    var(--primary-red)
+  );
+
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  opacity: 0.9;
+}
+
+/* ======================
+   FOOTER
+====================== */
+
+.footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.footer img {
+  height: 90px;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-call {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background: var(--cream);
+
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .features {
+    gap: 35px;
+  }
+}
