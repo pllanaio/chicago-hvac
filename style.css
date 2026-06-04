@@ -380,6 +380,103 @@ body {
 }
 
 /* ======================
+   SERVICE MAP
+====================== */
+
+.service-map-section {
+    padding-top: 70px;
+}
+
+.service-map {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.service-map-content,
+.service-map-card {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 36px;
+}
+
+.service-map-content {
+    border-top: 5px solid var(--orange);
+}
+
+.service-map-content h3,
+.service-map-card strong {
+    color: var(--primary-red);
+    font-size: 28px;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.service-map-content p,
+.service-map-card p {
+    color: var(--gray);
+    margin-bottom: 24px;
+}
+
+.service-cities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.service-cities span {
+    background: var(--cream);
+    color: var(--primary-red);
+    border: 1px solid rgba(156, 16, 24, 0.15);
+    padding: 10px 15px;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.service-map-card {
+    background: linear-gradient(135deg, var(--primary-red), var(--dark));
+    color: var(--white);
+}
+
+.service-map-card strong,
+.service-map-card p {
+    color: var(--white);
+}
+
+/* ======================
+   FAQ
+====================== */
+
+.faq-list {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    gap: 14px;
+}
+
+.faq-list details {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 22px 26px;
+    border-left: 5px solid var(--orange);
+}
+
+.faq-list summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--primary-red);
+    font-size: 18px;
+}
+
+.faq-list p {
+    margin-top: 14px;
+    color: var(--gray);
+}
+
+/* ======================
    LOCATION
 ====================== */
 
@@ -635,5 +732,9 @@ body {
 
     .map-wrapper {
         min-height: 320px;
+    }
+
+    .service-map {
+        grid-template-columns: 1fr;
     }
 }
