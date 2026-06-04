@@ -360,7 +360,9 @@ body {
 
 .dark-section {
     max-width: 100%;
-    background: var(--primary-red);
+    background:
+        radial-gradient(circle at top left, rgba(230, 91, 33, 0.28), transparent 30%),
+        linear-gradient(135deg, var(--primary-red), var(--dark));
     color: white;
 }
 
