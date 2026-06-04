@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="description"
-    content="Chicago HVAC provides heating, cooling, ventilation, AC repair, furnace repair, and emergency HVAC services across Chicago and nearby communities." />
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Chicago HVAC provides heating, cooling, ventilation, AC repair, furnace repair, and emergency HVAC services across Chicago and nearby communities." />
     <title>Chicago HVAC | Heating, Cooling & Ventilation</title>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -149,11 +149,12 @@
                 </p>
             </div>
 
-            <form class="contact-form">
-                <input type="text" placeholder="Full Name" required />
-                <input type="email" placeholder="Email Address" required />
-                <input type="tel" placeholder="Phone Number" />
-                <select required>
+            <form class="contact-form" action="/send-email" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required />
+                <input type="email" name="email" placeholder="Email Address" required />
+                <input type="tel" name="phone" placeholder="Phone Number" />
+
+                <select name="service" required>
                     <option value="">Select Service</option>
                     <option>Heating</option>
                     <option>Cooling</option>
@@ -161,7 +162,8 @@
                     <option>Commercial HVAC</option>
                     <option>Emergency Service</option>
                 </select>
-                <textarea placeholder="How can we help?" required></textarea>
+
+                <textarea name="message" placeholder="How can we help?" required></textarea>
                 <button type="submit">Send Request</button>
             </form>
         </section>
