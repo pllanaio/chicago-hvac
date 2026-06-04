@@ -40,7 +40,7 @@ app.post("/send-email", async (req, res) => {
 
         await transporter.sendMail({
             from: `"Chicago HVAC Website" <${process.env.SMTP_FROM}>`,
-            to: "info@chicagohvac.biz",
+            to: "info@chicago-hvac.biz",
             replyTo: email,
             subject: "New HVAC Website Lead",
             text: `
