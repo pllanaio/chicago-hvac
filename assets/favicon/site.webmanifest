@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Chicago HVAC",
+  "short_name": "Chicago HVAC",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
