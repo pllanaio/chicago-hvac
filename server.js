@@ -5,15 +5,31 @@ require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const submissions = new Map();
 
 app.use(express.static(path.join(__dirname)));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.post("/send-email", async (req, res) => {
-    const { name, email, phone, service, message } = req.body;
+    const { name, email, phone, service, message, website } = req.body;
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (website) {
+        return res.status(200).send("OK");
+    }
+
+    const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+    const now = Date.now();
+
+    const lastRequest = submissions.get(ip);
+
+    if (lastRequest && now - lastRequest < 60000) {
+        return res.status(429).send("Too many requests. Please wait 1 minute.");
+    }
+
+    submissions.set(ip, now);
 
     if (!name || !email || !service || !message) {
         return res.status(400).send("Please fill out all required fields.");
@@ -54,6 +70,26 @@ Service: ${service}
 Message:
 ${message}
       `,
+        });
+
+        await transporter.sendMail({
+            from: `"Chicago HVAC" <${process.env.SMTP_FROM}>`,
+            to: email,
+            subject: "We received your request",
+            text: `
+Hello ${name},
+
+Thank you for contacting Chicago HVAC.
+
+We have received your request regarding ${service} and will get back to you as soon as possible.
+
+If this is an emergency, please call us directly at (312) 451-3433.
+
+Best regards,
+Chicago HVAC
+6610 N Northwest Hwy
+Chicago, IL 60631
+`,
         });
 
         res.redirect("/thank-you.html");
