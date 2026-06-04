@@ -85,13 +85,21 @@ body {
 
 .nav-call {
     text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
     background: linear-gradient(135deg,
             var(--orange),
             var(--primary-red));
 
     color: white;
-    padding: 14px 24px;
+
+    padding: 14px 22px;
+
     border-radius: 999px;
+
     font-weight: 800;
 
     box-shadow:
@@ -102,6 +110,16 @@ body {
 
 .nav-call:hover {
     transform: translateY(-2px);
+}
+
+.nav-call img {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.nav-call span {
+    color: white;
 }
 
 .menu-toggle {
@@ -541,6 +559,80 @@ body {
     border: 0;
 }
 
+.directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 24px;
+
+    padding: 16px 24px;
+
+    background: linear-gradient(135deg,
+            var(--orange),
+            var(--primary-red));
+
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 12px 28px rgba(156, 16, 24, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.directions-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 16px 34px rgba(156, 16, 24, 0.35);
+}
+
+.directions-btn img {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+.request-service-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 24px;
+
+    padding: 16px 24px;
+
+    background: var(--white);
+
+    color: var(--primary-red);
+
+    text-decoration: none;
+    font-weight: 800;
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s ease;
+}
+
+.request-service-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 34px rgba(0, 0, 0, 0.25);
+}
+
+.request-service-btn img {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
 /* ======================
    CONTACT
 ====================== */
@@ -796,7 +888,8 @@ body {
     }
 
     .nav-call {
-        display: none;
+        display: inline-flex;
+        padding: 12px 18px;
     }
 
     .nav-links {
