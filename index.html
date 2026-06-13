@@ -172,12 +172,17 @@
                         <input type="tel" name="phone" placeholder="Phone Number" />
 
                         <select name="service" required>
-                            <option value="">Select Service</option>
-                            <option>Heating</option>
-                            <option>Cooling</option>
-                            <option>Ventilation</option>
-                            <option>Commercial HVAC</option>
-                            <option>Emergency Service</option>
+
+                            <option value="" selected disabled hidden>
+                                Select Service
+                            </option>
+
+                            <option value="Heating">Heating</option>
+                            <option value="Cooling">Cooling</option>
+                            <option value="Ventilation">Ventilation</option>
+                            <option value="Commercial HVAC">Commercial HVAC</option>
+                            <option value="Emergency Service">Emergency Service</option>
+
                         </select>
 
                         <textarea name="message" placeholder="How can we help?" required></textarea>

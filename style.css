@@ -740,6 +740,8 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 16px;
+    font-family: inherit;
+    font-size: 16px;
 }
 
 .contact-form textarea {
@@ -763,6 +765,18 @@ body {
 
 .contact-form button:hover {
     opacity: 0.9;
+}
+
+.contact-form select {
+
+    color: #888;
+
+}
+
+.contact-form select:valid {
+
+    color: #1f1f1f;
+
 }
 
 /* ======================
