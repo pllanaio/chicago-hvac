@@ -185,7 +185,11 @@
 
                         </select>
 
-                        <textarea name="message" placeholder="How can we help?" required></textarea>
+                        <textarea id="message" name="message" placeholder="How can we help?" maxlength="250" required></textarea>
+
+                        <div class="char-counter">
+                            <span id="charCount">0</span>/250
+                        </div>
 
                         <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none" />
 

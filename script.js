@@ -8,3 +8,16 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
     document.getElementById("menu").classList.remove("active");
   });
 });
+
+const textarea = document.getElementById("message");
+const counter = document.getElementById("charCount");
+
+if (textarea && counter) {
+
+    textarea.addEventListener("input", () => {
+
+        counter.textContent = textarea.value.length;
+
+    });
+
+}
