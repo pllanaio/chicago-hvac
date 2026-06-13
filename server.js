@@ -39,8 +39,8 @@ app.post("/send-email", async (req, res) => {
         return res.status(400).send("Please enter a valid email address.");
     }
 
-    if (message.length < 10) {
-        return res.status(400).send("Please provide a message with at least 10 characters.");
+    if (!message || !message.trim()) {
+        return res.status(400).send("Please provide a message.");
     }
 
     try {
