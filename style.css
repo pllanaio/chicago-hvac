@@ -307,6 +307,36 @@ body {
     align-items: center;
 }
 
+@media (max-width: 900px) {
+
+    .hero-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+    }
+
+    .hero-content {
+
+        order: 1;
+
+    }
+
+    .hero-form {
+
+        order: 2;
+
+        width: 100%;
+
+        max-width: 520px;
+
+        margin: 0 auto;
+
+    }
+
+}
+
 .hero-form {
 
     background: white;
