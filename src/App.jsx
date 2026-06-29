@@ -1,0 +1,135 @@
+const React = require("react");
+const { useState } = React;
+
+const services = [
+  ["AC Repair Chicago", "warm air, weak airflow, frozen coils, refrigerant issues, noisy condensers, and failed cooling during summer heat.", "Request AC repair", "#contact"],
+  ["Furnace Repair Chicago", "no heat, short cycling, ignition problems, blower issues, thermostat failures, and uneven winter heating.", "Request furnace repair", "#contact"],
+  ["HVAC Installation", "system replacement, energy-efficiency upgrades, new equipment sizing, and comfort improvements.", "Plan installation", "#contact"],
+  ["Emergency HVAC Service", "urgent no-heat, no-cooling, safety concerns, business interruptions, and critical comfort issues.", "Call emergency service", "tel:+17732160806"],
+  ["Maintenance & Tune-Ups", "seasonal inspections, filter checks, performance testing, efficiency, and preventing avoidable breakdowns.", "Schedule maintenance", "#contact"],
+  ["Commercial HVAC", "offices, retail spaces, restaurants, mixed-use buildings, ventilation issues, and business comfort needs.", "Get commercial help", "#contact"],
+];
+
+const answers = [
+  ["Repair or Replace?", "repair newer systems with one clear fault; consider replacement when the system is old, inefficient, unreliable, or repeatedly failing."],
+  ["Why is my AC blowing warm air?", "dirty filters, thermostat settings, refrigerant issues, frozen coils, electrical faults, or a failing outdoor unit."],
+  ["How often should HVAC be serviced?", "schedule cooling maintenance before summer and heating maintenance before winter to reduce breakdown risk."],
+];
+
+const areas = [
+  "Chicago", "Lincoln Park", "Lakeview", "Logan Square", "Wicker Park", "West Loop", "South Loop", "River North", "Edison Park", "Norwood Park", "Park Ridge", "Niles", "Skokie", "Evanston", "Oak Park", "Cicero", "Berwyn", "Des Plaines",
+];
+
+const faqs = [
+  ["Do you offer emergency HVAC service in Chicago?", "Yes. Chicago HVAC handles urgent heating and cooling issues including no-heat, no-cooling, thermostat, airflow, and equipment failure calls."],
+  ["How much does HVAC repair cost in Chicago?", "Cost depends on the system, part, access, urgency, and diagnostic findings. A technician should inspect the equipment before recommending repair or replacement."],
+  ["Should I repair or replace my AC or furnace?", "Repair is often best for newer systems with one isolated issue. Replacement may make more sense for older, inefficient, unreliable, or repeatedly failing equipment."],
+  ["How often should HVAC be serviced?", "Schedule cooling maintenance before summer and heating maintenance before winter. Regular tune-ups improve reliability, efficiency, and comfort."],
+  ["Why is my AC blowing warm air?", "Common causes include dirty filters, thermostat settings, refrigerant issues, frozen coils, electrical faults, or a failing outdoor unit."],
+  ["Do you service both residential and commercial properties?", "Yes. We provide HVAC repair, installation, maintenance, and ventilation services for homes, offices, retail spaces, restaurants, and commercial buildings."],
+  ["What areas do you serve?", "We serve Chicago and nearby communities including Edison Park, Norwood Park, Park Ridge, Niles, Skokie, Evanston, Oak Park, Cicero, Berwyn, and Des Plaines."],
+  ["Can I request a free estimate?", "Yes. Use the contact form or call us directly at +1 (773) 216-0806 to request service or an estimate."],
+  ["What HVAC brands do you work with?", "We service major HVAC brands including Carrier, Trane, Lennox, Rheem, Goodman, American Standard, and other common systems."],
+];
+
+function Header() {
+  const [open, setOpen] = useState(false);
+  const close = () => setOpen(false);
+
+  return (
+    <header className="site-header">
+      <nav className="navbar" aria-label="Primary navigation">
+        <a href="#" className="brand" aria-label="Chicago HVAC home">
+          <img src="/assets/logo.jpeg" alt="Chicago HVAC Logo" width="96" height="58" loading="eager" fetchPriority="high" />
+        </a>
+        <button className="menu-toggle" type="button" aria-controls="menu" aria-expanded={open} onClick={() => setOpen(!open)}>☰</button>
+        <ul id="menu" className={`nav-links ${open ? "active" : ""}`}>
+          {["Services", "Answers", "Why Us", "Areas", "FAQ", "Contact"].map((label) => (
+            <li key={label}><a href={`#${label === "Why Us" ? "why-us" : label.toLowerCase().replace(" ", "-")}`} onClick={close}>{label}</a></li>
+          ))}
+        </ul>
+        <a href="tel:+17732160806" className="nav-call">
+          <img src="/assets/telephone.svg" width="18" height="18" loading="lazy" alt="" />
+          <span>Call Us Now</span>
+        </a>
+      </nav>
+    </header>
+  );
+}
+
+function ContactForm() {
+  const [length, setLength] = useState(0);
+
+  return (
+    <div id="contact" className="hero-form">
+      <form className="contact-form" action="/send-email" method="POST">
+        <h2>Request HVAC Service</h2>
+        <p className="form-note">Tell us what is happening. We will help route your request quickly.</p>
+        <input type="text" name="name" placeholder="Full Name" autoComplete="name" required />
+        <input type="email" name="email" placeholder="Email Address" autoComplete="email" required />
+        <input type="tel" name="phone" placeholder="Phone Number" autoComplete="tel" />
+        <select name="service" required defaultValue="">
+          <option value="" disabled hidden>Select Service</option>
+          <option value="Emergency HVAC Service">Emergency HVAC Service</option>
+          <option value="AC Repair">AC Repair</option>
+          <option value="Furnace Repair">Furnace Repair</option>
+          <option value="HVAC Installation">HVAC Installation</option>
+          <option value="HVAC Maintenance">HVAC Maintenance</option>
+          <option value="Commercial HVAC">Commercial HVAC</option>
+          <option value="Ventilation / Indoor Air Quality">Ventilation / Indoor Air Quality</option>
+        </select>
+        <textarea id="message" name="message" placeholder="How can we help?" maxLength="1000" required onChange={(event) => setLength(event.target.value.length)} />
+        <div className="char-counter"><span>{length}</span>/1000</div>
+        <input type="text" name="website" tabIndex="-1" autoComplete="off" style={{ display: "none" }} />
+        <button type="submit">Request Fast HVAC Help</button>
+      </form>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Header />
+      <main>
+        <section className="hero">
+          <div className="hero-container">
+            <div className="hero-content">
+              <span className="eyebrow">Chicago HVAC Contractor</span>
+              <h1>Emergency HVAC, AC Repair & Furnace Repair in Chicago</h1>
+              <p>Fast heating, cooling, ventilation, repair, installation, and maintenance service for Chicago homes and businesses. Get clear answers, practical recommendations, and service built around comfort, safety, and uptime.</p>
+              <div className="hero-actions">
+                <a href="tel:+17732160806" className="btn btn-primary">Call 24/7 Emergency Service</a>
+                <a href="#contact" className="btn btn-secondary">Request Service Online</a>
+              </div>
+              <div className="hero-badges" aria-label="Trust signals"><span>Licensed & Insured</span><span>Residential & Commercial</span><span>Same-Day Requests</span></div>
+            </div>
+            <ContactForm />
+          </div>
+        </section>
+
+        <section className="trust-bar" aria-label="Service highlights"><div className="trust-item"><strong>24/7</strong><span>Emergency Service</span></div><div className="trust-item"><strong>Local</strong><span>Chicago Response</span></div><div className="trust-item"><strong>Homes</strong><span>& Businesses</span></div><div className="trust-item"><strong>Clear</strong><span>Recommendations</span></div></section>
+
+        <section id="services" className="section"><div className="section-heading"><span className="eyebrow">Our Services</span><h2>HVAC Services Built for Chicago Weather</h2><p>From urgent repairs to full system replacements, we provide dependable heating, cooling, ventilation, and maintenance services across Chicago.</p></div><div className="cards service-cards">{services.map(([title, text, cta, href]) => <article className="card" key={title}><h3>{title}</h3><p><strong>Best for:</strong> {text}</p><a href={href}>{cta}</a></article>)}</div></section>
+
+        <section id="answers" className="section answer-section"><div className="section-heading"><span className="eyebrow">Helpful HVAC Answers</span><h2>Direct HVAC Answers for Homeowners</h2><p>Find practical answers to common heating, cooling, repair, maintenance, and replacement questions.</p></div><div className="answer-grid">{answers.map(([title, text]) => <article className="answer-card" key={title}><h3>{title}</h3><p><strong>{title.includes("warm") ? "Common causes" : title.includes("often") ? "Rule of thumb" : "Quick answer"}:</strong> {text}</p></article>)}<article className="answer-card"><h3>What happens after I request service?</h3><ol><li>We review the issue and property type.</li><li>A technician diagnoses the system.</li><li>You receive a clear repair or replacement recommendation.</li></ol></article></div></section>
+
+        <section id="why-us" className="section dark-section"><div className="section-heading"><span className="eyebrow light">Why Homeowners Trust Us</span><h2>Fast, Honest & Professional HVAC Service</h2><p>We focus on clear communication, dependable workmanship, and practical recommendations for homes and businesses throughout Chicago.</p></div><div className="features"><div><strong>24/7</strong><span>Emergency Support</span></div><div><strong>Local</strong><span>Chicago Technicians</span></div><div><strong>Clear</strong><span>Repair Guidance</span></div><div><strong>Major</strong><span>HVAC Brands</span></div></div></section>
+
+        <section className="section process-section"><div className="section-heading"><span className="eyebrow">Our Process</span><h2>Simple Service From Request to Repair</h2></div><div className="process-grid"><article><span>1</span><h3>Tell Us the Issue</h3><p>Share the symptoms, system type, urgency, and address details.</p></article><article><span>2</span><h3>Diagnostic Visit</h3><p>A technician checks the equipment, airflow, thermostat, and visible failure points.</p></article><article><span>3</span><h3>Clear Options</h3><p>You get straightforward next steps for repair, maintenance, or replacement.</p></article></div></section>
+
+        <section id="brands" className="section brands-section"><div className="section-heading"><span className="eyebrow">Brands We Service</span><h2>Major HVAC Systems & Equipment</h2><p>Our technicians service and install equipment from trusted HVAC manufacturers.</p></div><div className="brand-grid">{["Carrier", "Trane", "Lennox", "Rheem", "Goodman", "American Standard"].map((brand) => <span key={brand}>{brand}</span>)}</div></section>
+
+        <section id="areas" className="section service-map-section"><div className="section-heading"><span className="eyebrow">Service Area</span><h2>HVAC Service Across Chicago & Nearby Suburbs</h2><p>We proudly serve homeowners, property managers, and businesses throughout Chicago and the surrounding communities.</p></div><div className="service-map"><div className="service-map-content"><h3>Primary Service Area</h3><p>Chicago HVAC serves residential and commercial customers throughout Chicago neighborhoods and surrounding communities.</p><div className="service-cities">{areas.map((area) => <span key={area}>{area}</span>)}</div></div><div className="service-map-card"><strong>Fast Local Response</strong><p>Located near Northwest Highway, we can quickly reach customers across the northwest side of Chicago and nearby areas.</p><a href="#contact" className="request-service-btn"><img src="/assets/request-service.svg" width="22" height="22" loading="lazy" alt="" /><span>Request Service</span></a></div></div></section>
+
+        <section id="faq" className="section faq-section"><div className="section-heading"><span className="eyebrow">FAQ</span><h2>HVAC Questions & Answers</h2><p>Answers to common questions about HVAC repair, maintenance, emergency service, and installation in Chicago.</p></div><div className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></section>
+
+        <section className="section final-cta"><div><span className="eyebrow light">Need HVAC Help?</span><h2>Get Fast HVAC Service in Chicago</h2><p>Call now for urgent heating or cooling issues, or send a service request through the form above.</p></div><a href="tel:+17732160806" className="btn btn-primary">Call +1 (773) 216-0806</a></section>
+      </main>
+      <footer className="footer"><img src="/assets/logo.jpeg" alt="Chicago HVAC Logo" width="149" height="90" loading="lazy" /><div className="footer-grid"><div className="footer-column"><h3>Chicago HVAC</h3><p>Heating • Cooling • Ventilation</p><p>Residential & Commercial HVAC Service</p></div><div className="footer-column"><h3>Contact</h3><a href="tel:+17732160806">+1 (773) 216-0806</a><a href="mailto:info@chicago-hvac.biz">info@chicago-hvac.biz</a><p>6610 N Northwest Hwy<br />Chicago, IL 60631</p></div><div className="footer-column"><h3>Business Hours</h3><p>Monday - Friday: 8:00 AM - 6:00 PM</p><p>Saturday: 9:00 AM - 3:00 PM</p><p>Sunday: Emergency Service Only</p><p><strong>24/7 Emergency HVAC Service</strong></p></div><div className="footer-column"><h3>Company</h3><div className="footer-socials"><a href="https://www.instagram.com/chicagoh.v.a.c" target="_blank" rel="noopener noreferrer">Instagram</a></div><div className="footer-legal"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a></div></div></div><small>© 2026 Chicago HVAC. All rights reserved. This Website is proudly powered by <a href="https://pllana.io">Leon Pllana IT-Solutions</a></small></footer>
+      <a href="tel:+17732160806" className="mobile-call-bar" aria-label="Call Chicago HVAC">Call 24/7 Emergency Service</a>
+    </>
+  );
+}
+
+module.exports = { default: App };
