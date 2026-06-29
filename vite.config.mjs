@@ -7,5 +7,14 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     sourcemap: false,
+    target: "es2020",
+    cssCodeSplit: true,
+    assetsInlineLimit: 4096,
+    minify: "esbuild",
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
 });
