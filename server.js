@@ -1,4 +1,5 @@
 const express = require("express");
+const compression = require("compression");
 const nodemailer = require("nodemailer");
 const path = require("path");
 const fs = require("fs");
@@ -11,9 +12,22 @@ const distPath = path.join(__dirname, "dist");
 const distIndex = path.join(distPath, "index.html");
 const hasBuiltFrontend = fs.existsSync(distIndex);
 
+app.disable("x-powered-by");
+app.use(
+    compression({
+        threshold: 1024,
+        filter: (req, res) => {
+            if (req.headers["x-no-compression"]) return false;
+            return compression.filter(req, res);
+        },
+    })
+);
+
 const cacheHeaders = (res, filePath) => {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+
     if (/\.(?:css|js|png|jpg|jpeg|svg|webp|avif|ico|woff2?)$/i.test(filePath)) {
-        res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+        res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
     }
 
     if (/\.html$/i.test(filePath)) {
@@ -26,7 +40,7 @@ app.use(
     express.static(path.join(__dirname, "assets"), {
         etag: true,
         lastModified: true,
-        maxAge: "30d",
+        maxAge: "1y",
         setHeaders: cacheHeaders,
     })
 );
@@ -35,7 +49,7 @@ app.use(
     express.static(hasBuiltFrontend ? distPath : path.join(__dirname), {
         etag: true,
         lastModified: true,
-        maxAge: "30d",
+        maxAge: "1y",
         setHeaders: cacheHeaders,
     })
 );
@@ -135,6 +149,7 @@ app.get(/.*/, (req, res, next) => {
     }
 
     res.setHeader("Cache-Control", "public, max-age=300, must-revalidate");
+    res.setHeader("X-Content-Type-Options", "nosniff");
     return res.sendFile(distIndex);
 });
 
