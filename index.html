@@ -1,290 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="description"
-        content="Chicago HVAC provides emergency HVAC repair, AC repair, furnace repair, installation, maintenance, and commercial HVAC service across Chicago and nearby suburbs." />
-    <link rel="canonical" href="https://chicago-hvac.biz/">
-    <link rel="preload" as="image" href="assets/chicago-skyline.png" fetchpriority="high">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/assets/favicon/site.webmanifest">
-
-    <meta property="og:title" content="Chicago HVAC | Emergency HVAC, AC Repair & Furnace Repair">
-    <meta property="og:description"
-        content="Fast HVAC repair, installation, maintenance, and emergency service for Chicago homes and businesses.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://chicago-hvac.biz">
-    <meta property="og:image" content="https://chicago-hvac.biz/assets/chicago-skyline.png">
-    <meta property="og:site_name" content="Chicago HVAC">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Chicago HVAC | Emergency HVAC Service in Chicago">
-    <meta name="twitter:description" content="AC repair, furnace repair, HVAC installation, maintenance, and emergency service in Chicago.">
-    <meta name="twitter:image" content="https://chicago-hvac.biz/assets/chicago-skyline.png">
-
-    <title>Chicago HVAC | Emergency HVAC, AC Repair & Furnace Repair</title>
-    <link rel="stylesheet" href="style.css" />
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://chicago-hvac.biz/#website",
-      "url": "https://chicago-hvac.biz/",
-      "name": "Chicago HVAC",
-      "publisher": { "@id": "https://chicago-hvac.biz/#business" },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://chicago-hvac.biz/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": ["LocalBusiness", "HVACBusiness"],
-      "@id": "https://chicago-hvac.biz/#business",
-      "name": "Chicago HVAC",
-      "url": "https://chicago-hvac.biz/",
-      "image": "https://chicago-hvac.biz/assets/logo.jpeg",
-      "logo": "https://chicago-hvac.biz/assets/logo.jpeg",
-      "telephone": "+17732160806",
-      "email": "info@chicago-hvac.biz",
-      "priceRange": "$$",
-      "description": "Chicago HVAC provides AC repair, furnace repair, HVAC installation, maintenance, ventilation, commercial HVAC, residential HVAC, and emergency HVAC service in Chicago.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "6610 N Northwest Hwy",
-        "addressLocality": "Chicago",
-        "addressRegion": "IL",
-        "postalCode": "60631",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 42.0026,
-        "longitude": -87.8176
-      },
-      "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "15:00" }
-      ],
-      "areaServed": ["Chicago", "Lincoln Park", "Lakeview", "Logan Square", "Wicker Park", "West Loop", "South Loop", "River North", "Edison Park", "Norwood Park", "Park Ridge", "Niles", "Skokie", "Evanston", "Oak Park", "Cicero", "Berwyn", "Des Plaines"],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+17732160806",
-        "contactType": "customer service",
-        "areaServed": "US-IL",
-        "availableLanguage": ["English"]
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "HVAC Services in Chicago",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AC Repair Chicago" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Furnace Repair Chicago" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency HVAC Service Chicago" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HVAC Installation Chicago" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial HVAC Chicago" } }
-        ]
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://chicago-hvac.biz/#breadcrumb",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://chicago-hvac.biz/" }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://chicago-hvac.biz/#faq",
-      "mainEntity": [
-        { "@type": "Question", "name": "Do you offer emergency HVAC service in Chicago?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Chicago HVAC handles urgent heating and cooling issues for Chicago homes and businesses, including no-heat, no-cooling, thermostat, airflow, and system failure calls." } },
-        { "@type": "Question", "name": "How much does HVAC repair cost in Chicago?", "acceptedAnswer": { "@type": "Answer", "text": "HVAC repair cost depends on the system, part, access, urgency, and diagnostic findings. A technician should inspect the equipment before recommending repair or replacement." } },
-        { "@type": "Question", "name": "Should I repair or replace my AC or furnace?", "acceptedAnswer": { "@type": "Answer", "text": "Repair is often best for newer systems with isolated issues. Replacement may make more sense for older, inefficient, unreliable, or repeatedly failing equipment." } },
-        { "@type": "Question", "name": "Do you service residential and commercial HVAC systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Chicago HVAC works with residential and commercial heating, cooling, ventilation, maintenance, repair, and installation needs." } },
-        { "@type": "Question", "name": "What HVAC brands do you work with?", "acceptedAnswer": { "@type": "Answer", "text": "We service major HVAC brands including Carrier, Trane, Lennox, Rheem, Goodman, American Standard, and other common systems." } },
-        { "@type": "Question", "name": "What Chicago areas do you serve?", "acceptedAnswer": { "@type": "Answer", "text": "We serve Chicago and nearby communities including Edison Park, Norwood Park, Park Ridge, Niles, Skokie, Evanston, Oak Park, Cicero, Berwyn, and Des Plaines." } }
-      ]
-    }
-  ]
-}
-</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="description" content="Chicago HVAC provides emergency HVAC repair, AC repair, furnace repair, installation, maintenance, and commercial HVAC service across Chicago and nearby suburbs." />
+<link rel="canonical" href="https://chicago-hvac.biz/">
+<link rel="preload" as="image" href="assets/chicago-skyline.png" fetchpriority="high">
+<link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/assets/favicon/site.webmanifest">
+<meta property="og:title" content="Chicago HVAC | Emergency HVAC, AC Repair & Furnace Repair">
+<meta property="og:description" content="Fast HVAC repair, installation, maintenance, and emergency service for Chicago homes and businesses.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chicago-hvac.biz">
+<meta property="og:image" content="https://chicago-hvac.biz/assets/chicago-skyline.png">
+<meta property="og:site_name" content="Chicago HVAC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chicago HVAC | Emergency HVAC Service in Chicago">
+<meta name="twitter:description" content="AC repair, furnace repair, HVAC installation, maintenance, and emergency service in Chicago.">
+<meta name="twitter:image" content="https://chicago-hvac.biz/assets/chicago-skyline.png">
+<title>Chicago HVAC | Emergency HVAC, AC Repair & Furnace Repair</title>
+<link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <header class="site-header">
-        <nav class="navbar" aria-label="Primary navigation">
-            <a href="#" class="brand" aria-label="Chicago HVAC home">
-                <img src="assets/logo.jpeg" alt="Chicago HVAC Logo" width="96" height="58" loading="eager" fetchpriority="high">
-            </a>
-
-            <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
-
-            <ul id="menu" class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#answers">Answers</a></li>
-                <li><a href="#why-us">Why Us</a></li>
-                <li><a href="#areas">Areas</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <a href="tel:+17732160806" class="nav-call">
-                <img src="assets/telephone.svg" width="18" height="18" loading="lazy" alt="">
-                <span>Call Us Now</span>
-            </a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <span class="eyebrow">Chicago HVAC Contractor</span>
-                    <h1>Emergency HVAC, AC Repair & Furnace Repair in Chicago</h1>
-                    <p>
-                        Fast heating, cooling, ventilation, repair, installation, and maintenance service for Chicago homes and businesses.
-                        Get clear answers, practical recommendations, and service built around comfort, safety, and uptime.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="tel:+17732160806" class="btn btn-primary">Call 24/7 Emergency Service</a>
-                        <a href="#contact" class="btn btn-secondary">Request Service Online</a>
-                    </div>
-                    <div class="hero-badges" aria-label="Trust signals">
-                        <span>Licensed & Insured</span>
-                        <span>Residential & Commercial</span>
-                        <span>Same-Day Requests</span>
-                    </div>
-                </div>
-
-                <div id="contact" class="hero-form">
-                    <form class="contact-form" action="/send-email" method="POST">
-                        <h2>Request HVAC Service</h2>
-                        <p class="form-note">Tell us what is happening. We will help route your request quickly.</p>
-                        <input type="text" name="name" placeholder="Full Name" autocomplete="name" required />
-                        <input type="email" name="email" placeholder="Email Address" autocomplete="email" required />
-                        <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" />
-                        <select name="service" required>
-                            <option value="" selected disabled hidden>Select Service</option>
-                            <option value="Emergency HVAC Service">Emergency HVAC Service</option>
-                            <option value="AC Repair">AC Repair</option>
-                            <option value="Furnace Repair">Furnace Repair</option>
-                            <option value="HVAC Installation">HVAC Installation</option>
-                            <option value="HVAC Maintenance">HVAC Maintenance</option>
-                            <option value="Commercial HVAC">Commercial HVAC</option>
-                            <option value="Ventilation / Indoor Air Quality">Ventilation / Indoor Air Quality</option>
-                        </select>
-                        <textarea id="message" name="message" placeholder="How can we help?" maxlength="1000" required></textarea>
-                        <div class="char-counter"><span id="charCount">0</span>/1000</div>
-                        <input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none" />
-                        <button type="submit">Request Fast HVAC Help</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="trust-bar" aria-label="Service highlights">
-            <div class="trust-item"><strong>24/7</strong><span>Emergency Service</span></div>
-            <div class="trust-item"><strong>Local</strong><span>Chicago Response</span></div>
-            <div class="trust-item"><strong>Homes</strong><span>& Businesses</span></div>
-            <div class="trust-item"><strong>Clear</strong><span>Recommendations</span></div>
-        </section>
-
-        <section id="services" class="section">
-            <div class="section-heading">
-                <span class="eyebrow">Our Services</span>
-                <h2>HVAC Services Built for Chicago Weather</h2>
-                <p>Structured service pages can be expanded from this core hub to build topical authority for every major HVAC search intent.</p>
-            </div>
-
-            <div class="cards service-cards">
-                <article class="card"><h3>AC Repair Chicago</h3><p><strong>Best for:</strong> warm air, weak airflow, frozen coils, refrigerant issues, noisy condensers, and failed cooling during summer heat.</p><a href="#contact">Request AC repair</a></article>
-                <article class="card"><h3>Furnace Repair Chicago</h3><p><strong>Best for:</strong> no heat, short cycling, ignition problems, blower issues, thermostat failures, and uneven winter heating.</p><a href="#contact">Request furnace repair</a></article>
-                <article class="card"><h3>HVAC Installation</h3><p><strong>Best for:</strong> system replacement, energy-efficiency upgrades, new equipment sizing, and comfort improvements.</p><a href="#contact">Plan installation</a></article>
-                <article class="card"><h3>Emergency HVAC Service</h3><p><strong>Best for:</strong> urgent no-heat, no-cooling, safety concerns, business interruptions, and critical comfort issues.</p><a href="tel:+17732160806">Call emergency service</a></article>
-                <article class="card"><h3>Maintenance & Tune-Ups</h3><p><strong>Best for:</strong> seasonal inspections, filter checks, performance testing, efficiency, and preventing avoidable breakdowns.</p><a href="#contact">Schedule maintenance</a></article>
-                <article class="card"><h3>Commercial HVAC</h3><p><strong>Best for:</strong> offices, retail spaces, restaurants, mixed-use buildings, ventilation issues, and business comfort needs.</p><a href="#contact">Get commercial help</a></article>
-            </div>
-        </section>
-
-        <section id="answers" class="section answer-section">
-            <div class="section-heading"><span class="eyebrow">Answer Hub</span><h2>Direct HVAC Answers for Homeowners</h2><p>Short, structured answers help visitors and AI answer engines understand the business quickly.</p></div>
-            <div class="answer-grid">
-                <article class="answer-card"><h3>Repair or Replace?</h3><p><strong>Quick answer:</strong> repair newer systems with one clear fault; consider replacement when the system is old, inefficient, unreliable, or repeatedly failing.</p></article>
-                <article class="answer-card"><h3>Why is my AC blowing warm air?</h3><p><strong>Common causes:</strong> dirty filters, thermostat settings, refrigerant issues, frozen coils, electrical faults, or a failing outdoor unit.</p></article>
-                <article class="answer-card"><h3>How often should HVAC be serviced?</h3><p><strong>Rule of thumb:</strong> schedule cooling maintenance before summer and heating maintenance before winter to reduce breakdown risk.</p></article>
-                <article class="answer-card"><h3>What happens after I request service?</h3><ol><li>We review the issue and property type.</li><li>A technician diagnoses the system.</li><li>You receive a clear repair or replacement recommendation.</li></ol></article>
-            </div>
-        </section>
-
-        <section id="why-us" class="section dark-section">
-            <div class="section-heading"><span class="eyebrow light">EEAT & Trust</span><h2>Fast, Honest & Professional HVAC Service</h2><p>Trust-focused content helps users and search systems understand why Chicago HVAC is a credible local service provider.</p></div>
-            <div class="features"><div><strong>24/7</strong><span>Emergency Support</span></div><div><strong>Local</strong><span>Chicago Technicians</span></div><div><strong>Clear</strong><span>Repair Guidance</span></div><div><strong>Major</strong><span>HVAC Brands</span></div></div>
-        </section>
-
-        <section class="section process-section">
-            <div class="section-heading"><span class="eyebrow">Our Process</span><h2>Simple Service From Request to Repair</h2></div>
-            <div class="process-grid">
-                <article><span>1</span><h3>Tell Us the Issue</h3><p>Share the symptoms, system type, urgency, and address details.</p></article>
-                <article><span>2</span><h3>Diagnostic Visit</h3><p>A technician checks the equipment, airflow, thermostat, and visible failure points.</p></article>
-                <article><span>3</span><h3>Clear Options</h3><p>You get straightforward next steps for repair, maintenance, or replacement.</p></article>
-            </div>
-        </section>
-
-        <section id="brands" class="section brands-section">
-            <div class="section-heading"><span class="eyebrow">Brands We Service</span><h2>Major HVAC Systems & Equipment</h2><p>Our technicians service and install equipment from trusted HVAC manufacturers.</p></div>
-            <div class="brand-grid"><span>Carrier</span><span>Trane</span><span>Lennox</span><span>Rheem</span><span>Goodman</span><span>American Standard</span></div>
-        </section>
-
-        <section id="areas" class="section service-map-section">
-            <div class="section-heading"><span class="eyebrow">Service Area</span><h2>HVAC Service Across Chicago & Nearby Suburbs</h2><p>Local relevance matters. These areas can become individual landing pages over time for stronger local SEO coverage.</p></div>
-            <div class="service-map">
-                <div class="service-map-content"><h3>Primary Service Area</h3><p>Chicago HVAC serves residential and commercial customers throughout Chicago neighborhoods and surrounding communities.</p><div class="service-cities"><span>Chicago</span><span>Lincoln Park</span><span>Lakeview</span><span>Logan Square</span><span>Wicker Park</span><span>West Loop</span><span>South Loop</span><span>River North</span><span>Edison Park</span><span>Norwood Park</span><span>Park Ridge</span><span>Niles</span><span>Skokie</span><span>Evanston</span><span>Oak Park</span><span>Cicero</span><span>Berwyn</span><span>Des Plaines</span></div></div>
-                <div class="service-map-card"><strong>Fast Local Response</strong><p>Located near Northwest Highway, we can quickly reach customers across the northwest side of Chicago and nearby areas.</p><a href="#contact" class="request-service-btn"><img src="assets/request-service.svg" width="22" height="22" loading="lazy" alt=""><span>Request Service</span></a></div>
-            </div>
-        </section>
-
-        <section id="faq" class="section faq-section">
-            <div class="section-heading"><span class="eyebrow">FAQ</span><h2>HVAC Questions & Answers</h2><p>Concise answers for search engines, AI systems, homeowners, and business owners in Chicago.</p></div>
-            <div class="faq-list">
-                <details><summary>Do you offer emergency HVAC service in Chicago?</summary><p>Yes. Chicago HVAC handles urgent heating and cooling issues including no-heat, no-cooling, thermostat, airflow, and system failure calls.</p></details>
-                <details><summary>How much does HVAC repair cost in Chicago?</summary><p>Cost depends on the system, part, access, urgency, and diagnostic findings. A technician should inspect the equipment before recommending repair or replacement.</p></details>
-                <details><summary>Should I repair or replace my AC or furnace?</summary><p>Repair is often best for newer systems with one isolated issue. Replacement may make more sense for older, inefficient, unreliable, or repeatedly failing equipment.</p></details>
-                <details><summary>How often should HVAC be serviced?</summary><p>Schedule cooling maintenance before summer and heating maintenance before winter. Regular tune-ups improve reliability, efficiency, and comfort.</p></details>
-                <details><summary>Why is my AC blowing warm air?</summary><p>Common causes include dirty filters, thermostat settings, refrigerant issues, frozen coils, electrical faults, or a failing outdoor unit.</p></details>
-                <details><summary>Do you service both residential and commercial properties?</summary><p>Yes. We provide HVAC repair, installation, maintenance, and ventilation services for homes, offices, retail spaces, restaurants, and commercial buildings.</p></details>
-                <details><summary>What areas do you serve?</summary><p>We serve Chicago and nearby communities including Edison Park, Norwood Park, Park Ridge, Niles, Skokie, Evanston, Oak Park, Cicero, Berwyn, and Des Plaines.</p></details>
-                <details><summary>Can I request a free estimate?</summary><p>Yes. Use the contact form or call us directly at +1 (773) 216-0806 to request service or an estimate.</p></details>
-                <details><summary>What HVAC brands do you work with?</summary><p>We service major HVAC brands including Carrier, Trane, Lennox, Rheem, Goodman, American Standard, and other common systems.</p></details>
-            </div>
-        </section>
-
-        <section class="section final-cta">
-            <div><span class="eyebrow light">Need HVAC Help?</span><h2>Get Fast HVAC Service in Chicago</h2><p>Call now for urgent heating or cooling issues, or send a service request through the form above.</p></div>
-            <a href="tel:+17732160806" class="btn btn-primary">Call +1 (773) 216-0806</a>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <img src="assets/logo.jpeg" alt="Chicago HVAC Logo" width="149" height="90" loading="lazy">
-        <div class="footer-grid">
-            <div class="footer-column"><h3>Chicago HVAC</h3><p>Heating • Cooling • Ventilation</p><p>Residential & Commercial HVAC Service</p></div>
-            <div class="footer-column"><h3>Contact</h3><a href="tel:+17732160806">+1 (773) 216-0806</a><a href="mailto:info@chicago-hvac.biz">info@chicago-hvac.biz</a><p>6610 N Northwest Hwy<br>Chicago, IL 60631</p></div>
-            <div class="footer-column"><h3>Business Hours</h3><p>Monday - Friday: 8:00 AM - 6:00 PM</p><p>Saturday: 9:00 AM - 3:00 PM</p><p>Sunday: Emergency Service Only</p><p><strong>24/7 Emergency HVAC Service</strong></p></div>
-            <div class="footer-column"><h3>Company</h3><div class="footer-socials"><a href="https://www.instagram.com/chicagoh.v.a.c" target="_blank" rel="noopener">Instagram</a></div><div class="footer-legal"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a></div></div>
-        </div>
-        <small>© 2026 Chicago HVAC. All rights reserved. This Website is proudly powered by <a href="https://pllana.io">Leon Pllana IT-Solutions</a></small>
-    </footer>
-
-    <a href="tel:+17732160806" class="mobile-call-bar" aria-label="Call Chicago HVAC">Call 24/7 Emergency Service</a>
-    <script src="script.js" defer></script>
+<header class="site-header"><nav class="navbar" aria-label="Primary navigation"><a href="#" class="brand" aria-label="Chicago HVAC home"><img src="assets/logo.jpeg" alt="Chicago HVAC Logo" width="96" height="58" loading="eager" fetchpriority="high"></a><button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false" onclick="toggleMenu()">☰</button><ul id="menu" class="nav-links"><li><a href="#services">Services</a></li><li><a href="#answers">Answers</a></li><li><a href="#why-us">Why Us</a></li><li><a href="#areas">Areas</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul><a href="tel:+17732160806" class="nav-call"><img src="assets/telephone.svg" width="18" height="18" loading="lazy" alt=""><span>Call Us Now</span></a></nav></header>
+<main>
+<section class="hero"><div class="hero-container"><div class="hero-content"><span class="eyebrow">Chicago HVAC Contractor</span><h1>Emergency HVAC, AC Repair & Furnace Repair in Chicago</h1><p>Fast heating, cooling, ventilation, repair, installation, and maintenance service for Chicago homes and businesses. Get clear answers, practical recommendations, and service built around comfort, safety, and uptime.</p><div class="hero-actions"><a href="tel:+17732160806" class="btn btn-primary">Call 24/7 Emergency Service</a><a href="#contact" class="btn btn-secondary">Request Service Online</a></div><div class="hero-badges" aria-label="Trust signals"><span>Licensed & Insured</span><span>Residential & Commercial</span><span>Same-Day Requests</span></div></div><div id="contact" class="hero-form"><form class="contact-form" action="/send-email" method="POST"><h2>Request HVAC Service</h2><p class="form-note">Tell us what is happening. We will help route your request quickly.</p><input type="text" name="name" placeholder="Full Name" autocomplete="name" required /><input type="email" name="email" placeholder="Email Address" autocomplete="email" required /><input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" /><select name="service" required><option value="" selected disabled hidden>Select Service</option><option value="Emergency HVAC Service">Emergency HVAC Service</option><option value="AC Repair">AC Repair</option><option value="Furnace Repair">Furnace Repair</option><option value="HVAC Installation">HVAC Installation</option><option value="HVAC Maintenance">HVAC Maintenance</option><option value="Commercial HVAC">Commercial HVAC</option><option value="Ventilation / Indoor Air Quality">Ventilation / Indoor Air Quality</option></select><textarea id="message" name="message" placeholder="How can we help?" maxlength="1000" required></textarea><div class="char-counter"><span id="charCount">0</span>/1000</div><input type="text" name="website" tabindex="-1" autocomplete="off" style="display:none" /><button type="submit">Request Fast HVAC Help</button></form></div></div></section>
+<section class="trust-bar" aria-label="Service highlights"><div class="trust-item"><strong>24/7</strong><span>Emergency Service</span></div><div class="trust-item"><strong>Local</strong><span>Chicago Response</span></div><div class="trust-item"><strong>Homes</strong><span>& Businesses</span></div><div class="trust-item"><strong>Clear</strong><span>Recommendations</span></div></section>
+<section id="services" class="section"><div class="section-heading"><span class="eyebrow">Our Services</span><h2>HVAC Services Built for Chicago Weather</h2><p>From urgent repairs to full system replacements, we provide dependable heating, cooling, ventilation, and maintenance services across Chicago.</p></div><div class="cards service-cards"><article class="card"><h3>AC Repair Chicago</h3><p><strong>Best for:</strong> warm air, weak airflow, frozen coils, refrigerant issues, noisy condensers, and failed cooling during summer heat.</p><a href="#contact">Request AC repair</a></article><article class="card"><h3>Furnace Repair Chicago</h3><p><strong>Best for:</strong> no heat, short cycling, ignition problems, blower issues, thermostat failures, and uneven winter heating.</p><a href="#contact">Request furnace repair</a></article><article class="card"><h3>HVAC Installation</h3><p><strong>Best for:</strong> system replacement, energy-efficiency upgrades, new equipment sizing, and comfort improvements.</p><a href="#contact">Plan installation</a></article><article class="card"><h3>Emergency HVAC Service</h3><p><strong>Best for:</strong> urgent no-heat, no-cooling, safety concerns, business interruptions, and critical comfort issues.</p><a href="tel:+17732160806">Call emergency service</a></article><article class="card"><h3>Maintenance & Tune-Ups</h3><p><strong>Best for:</strong> seasonal inspections, filter checks, performance testing, efficiency, and preventing avoidable breakdowns.</p><a href="#contact">Schedule maintenance</a></article><article class="card"><h3>Commercial HVAC</h3><p><strong>Best for:</strong> offices, retail spaces, restaurants, mixed-use buildings, ventilation issues, and business comfort needs.</p><a href="#contact">Get commercial help</a></article></div></section>
+<section id="answers" class="section answer-section"><div class="section-heading"><span class="eyebrow">Helpful HVAC Answers</span><h2>Direct HVAC Answers for Homeowners</h2><p>Find practical answers to common heating, cooling, repair, maintenance, and replacement questions.</p></div><div class="answer-grid"><article class="answer-card"><h3>Repair or Replace?</h3><p><strong>Quick answer:</strong> repair newer systems with one clear fault; consider replacement when the system is old, inefficient, unreliable, or repeatedly failing.</p></article><article class="answer-card"><h3>Why is my AC blowing warm air?</h3><p><strong>Common causes:</strong> dirty filters, thermostat settings, refrigerant issues, frozen coils, electrical faults, or a failing outdoor unit.</p></article><article class="answer-card"><h3>How often should HVAC be serviced?</h3><p><strong>Rule of thumb:</strong> schedule cooling maintenance before summer and heating maintenance before winter to reduce breakdown risk.</p></article><article class="answer-card"><h3>What happens after I request service?</h3><ol><li>We review the issue and property type.</li><li>A technician diagnoses the system.</li><li>You receive a clear repair or replacement recommendation.</li></ol></article></div></section>
+<section id="why-us" class="section dark-section"><div class="section-heading"><span class="eyebrow light">Why Homeowners Trust Us</span><h2>Fast, Honest & Professional HVAC Service</h2><p>We focus on clear communication, dependable workmanship, and practical recommendations for homes and businesses throughout Chicago.</p></div><div class="features"><div><strong>24/7</strong><span>Emergency Support</span></div><div><strong>Local</strong><span>Chicago Technicians</span></div><div><strong>Clear</strong><span>Repair Guidance</span></div><div><strong>Major</strong><span>HVAC Brands</span></div></div></section>
+<section class="section process-section"><div class="section-heading"><span class="eyebrow">Our Process</span><h2>Simple Service From Request to Repair</h2></div><div class="process-grid"><article><span>1</span><h3>Tell Us the Issue</h3><p>Share the symptoms, system type, urgency, and address details.</p></article><article><span>2</span><h3>Diagnostic Visit</h3><p>A technician checks the equipment, airflow, thermostat, and visible failure points.</p></article><article><span>3</span><h3>Clear Options</h3><p>You get straightforward next steps for repair, maintenance, or replacement.</p></article></div></section>
+<section id="brands" class="section brands-section"><div class="section-heading"><span class="eyebrow">Brands We Service</span><h2>Major HVAC Systems & Equipment</h2><p>Our technicians service and install equipment from trusted HVAC manufacturers.</p></div><div class="brand-grid"><span>Carrier</span><span>Trane</span><span>Lennox</span><span>Rheem</span><span>Goodman</span><span>American Standard</span></div></section>
+<section id="areas" class="section service-map-section"><div class="section-heading"><span class="eyebrow">Service Area</span><h2>HVAC Service Across Chicago & Nearby Suburbs</h2><p>We proudly serve homeowners, property managers, and businesses throughout Chicago and the surrounding communities.</p></div><div class="service-map"><div class="service-map-content"><h3>Primary Service Area</h3><p>Chicago HVAC serves residential and commercial customers throughout Chicago neighborhoods and surrounding communities.</p><div class="service-cities"><span>Chicago</span><span>Lincoln Park</span><span>Lakeview</span><span>Logan Square</span><span>Wicker Park</span><span>West Loop</span><span>South Loop</span><span>River North</span><span>Edison Park</span><span>Norwood Park</span><span>Park Ridge</span><span>Niles</span><span>Skokie</span><span>Evanston</span><span>Oak Park</span><span>Cicero</span><span>Berwyn</span><span>Des Plaines</span></div></div><div class="service-map-card"><strong>Fast Local Response</strong><p>Located near Northwest Highway, we can quickly reach customers across the northwest side of Chicago and nearby areas.</p><a href="#contact" class="request-service-btn"><img src="assets/request-service.svg" width="22" height="22" loading="lazy" alt=""><span>Request Service</span></a></div></div></section>
+<section id="faq" class="section faq-section"><div class="section-heading"><span class="eyebrow">FAQ</span><h2>HVAC Questions & Answers</h2><p>Answers to common questions about HVAC repair, maintenance, emergency service, and installation in Chicago.</p></div><div class="faq-list"><details><summary>Do you offer emergency HVAC service in Chicago?</summary><p>Yes. Chicago HVAC handles urgent heating and cooling issues including no-heat, no-cooling, thermostat, airflow, and equipment failure calls.</p></details><details><summary>How much does HVAC repair cost in Chicago?</summary><p>Cost depends on the system, part, access, urgency, and diagnostic findings. A technician should inspect the equipment before recommending repair or replacement.</p></details><details><summary>Should I repair or replace my AC or furnace?</summary><p>Repair is often best for newer systems with one isolated issue. Replacement may make more sense for older, inefficient, unreliable, or repeatedly failing equipment.</p></details><details><summary>How often should HVAC be serviced?</summary><p>Schedule cooling maintenance before summer and heating maintenance before winter. Regular tune-ups improve reliability, efficiency, and comfort.</p></details><details><summary>Why is my AC blowing warm air?</summary><p>Common causes include dirty filters, thermostat settings, refrigerant issues, frozen coils, electrical faults, or a failing outdoor unit.</p></details><details><summary>Do you service both residential and commercial properties?</summary><p>Yes. We provide HVAC repair, installation, maintenance, and ventilation services for homes, offices, retail spaces, restaurants, and commercial buildings.</p></details><details><summary>What areas do you serve?</summary><p>We serve Chicago and nearby communities including Edison Park, Norwood Park, Park Ridge, Niles, Skokie, Evanston, Oak Park, Cicero, Berwyn, and Des Plaines.</p></details><details><summary>Can I request a free estimate?</summary><p>Yes. Use the contact form or call us directly at +1 (773) 216-0806 to request service or an estimate.</p></details><details><summary>What HVAC brands do you work with?</summary><p>We service major HVAC brands including Carrier, Trane, Lennox, Rheem, Goodman, American Standard, and other common systems.</p></details></div></section>
+<section class="section final-cta"><div><span class="eyebrow light">Need HVAC Help?</span><h2>Get Fast HVAC Service in Chicago</h2><p>Call now for urgent heating or cooling issues, or send a service request through the form above.</p></div><a href="tel:+17732160806" class="btn btn-primary">Call +1 (773) 216-0806</a></section>
+</main>
+<footer class="footer"><img src="assets/logo.jpeg" alt="Chicago HVAC Logo" width="149" height="90" loading="lazy"><div class="footer-grid"><div class="footer-column"><h3>Chicago HVAC</h3><p>Heating • Cooling • Ventilation</p><p>Residential & Commercial HVAC Service</p></div><div class="footer-column"><h3>Contact</h3><a href="tel:+17732160806">+1 (773) 216-0806</a><a href="mailto:info@chicago-hvac.biz">info@chicago-hvac.biz</a><p>6610 N Northwest Hwy<br>Chicago, IL 60631</p></div><div class="footer-column"><h3>Business Hours</h3><p>Monday - Friday: 8:00 AM - 6:00 PM</p><p>Saturday: 9:00 AM - 3:00 PM</p><p>Sunday: Emergency Service Only</p><p><strong>24/7 Emergency HVAC Service</strong></p></div><div class="footer-column"><h3>Company</h3><div class="footer-socials"><a href="https://www.instagram.com/chicagoh.v.a.c" target="_blank" rel="noopener">Instagram</a></div><div class="footer-legal"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms-of-service.html">Terms of Service</a></div></div></div><small>© 2026 Chicago HVAC. All rights reserved. This Website is proudly powered by <a href="https://pllana.io">Leon Pllana IT-Solutions</a></small></footer>
+<a href="tel:+17732160806" class="mobile-call-bar" aria-label="Call Chicago HVAC">Call 24/7 Emergency Service</a>
+<script src="script.js" defer></script>
 </body>
-
 </html>
