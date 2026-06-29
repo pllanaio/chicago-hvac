@@ -1,26 +1,42 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const path = require("path");
+const fs = require("fs");
 require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const submissions = new Map();
+const distPath = path.join(__dirname, "dist");
+const distIndex = path.join(distPath, "index.html");
+const hasBuiltFrontend = fs.existsSync(distIndex);
+
+const cacheHeaders = (res, filePath) => {
+    if (/\.(?:css|js|png|jpg|jpeg|svg|webp|avif|ico|woff2?)$/i.test(filePath)) {
+        res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+    }
+
+    if (/\.html$/i.test(filePath)) {
+        res.setHeader("Cache-Control", "public, max-age=300, must-revalidate");
+    }
+};
 
 app.use(
-    express.static(path.join(__dirname), {
+    "/assets",
+    express.static(path.join(__dirname, "assets"), {
         etag: true,
         lastModified: true,
         maxAge: "30d",
-        setHeaders: (res, filePath) => {
-            if (/\.(?:css|js|png|jpg|jpeg|svg|webp|avif|ico|woff2?)$/i.test(filePath)) {
-                res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
-            }
+        setHeaders: cacheHeaders,
+    })
+);
 
-            if (/\.html$/i.test(filePath)) {
-                res.setHeader("Cache-Control", "public, max-age=300, must-revalidate");
-            }
-        },
+app.use(
+    express.static(hasBuiltFrontend ? distPath : path.join(__dirname), {
+        etag: true,
+        lastModified: true,
+        maxAge: "30d",
+        setHeaders: cacheHeaders,
     })
 );
 
@@ -113,6 +129,19 @@ Chicago, IL 60631
         console.error("Email error:", error);
         res.status(500).send("Email could not be sent.");
     }
+});
+
+app.get("*splat", (req, res, next) => {
+    if (req.path.includes(".")) {
+        return next();
+    }
+
+    if (hasBuiltFrontend) {
+        res.setHeader("Cache-Control", "public, max-age=300, must-revalidate");
+        return res.sendFile(distIndex);
+    }
+
+    return next();
 });
 
 app.listen(PORT, () => {
