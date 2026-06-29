@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import partnerPreviewImage from "./partnerPreviewImage.js";
+import "./partner.css";
 
 const phone = "+1 (773) 216-0806";
 const phoneHref = "tel:+17732160806";
