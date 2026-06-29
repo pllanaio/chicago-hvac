@@ -7,7 +7,23 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const submissions = new Map();
 
-app.use(express.static(path.join(__dirname)));
+app.use(
+    express.static(path.join(__dirname), {
+        etag: true,
+        lastModified: true,
+        maxAge: "30d",
+        setHeaders: (res, filePath) => {
+            if (/\.(?:css|js|png|jpg|jpeg|svg|webp|avif|ico|woff2?)$/i.test(filePath)) {
+                res.setHeader("Cache-Control", "public, max-age=2592000, immutable");
+            }
+
+            if (/\.html$/i.test(filePath)) {
+                res.setHeader("Cache-Control", "public, max-age=300, must-revalidate");
+            }
+        },
+    })
+);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -83,7 +99,7 @@ Thank you for contacting Chicago HVAC.
 
 We have received your request regarding ${service} and will get back to you as soon as possible.
 
-If this is an emergency, please call us directly at (312) 451-3433.
+If this is an emergency, please call us directly at +1 (773) 216-0806.
 
 Best regards,
 Chicago HVAC
