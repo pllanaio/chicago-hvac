@@ -45,16 +45,12 @@ app.use(express.json());
 
 app.post("/send-email", async (req, res) => {
     const { name, email, phone, service, message, website } = req.body;
-
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (website) {
-        return res.status(200).send("OK");
-    }
+    if (website) return res.status(200).send("OK");
 
     const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
     const now = Date.now();
-
     const lastRequest = submissions.get(ip);
 
     if (lastRequest && now - lastRequest < 60000) {
@@ -71,7 +67,7 @@ app.post("/send-email", async (req, res) => {
         return res.status(400).send("Please enter a valid email address.");
     }
 
-    if (!message || !message.trim()) {
+    if (!message.trim()) {
         return res.status(400).send("Please provide a message.");
     }
 
@@ -101,7 +97,7 @@ Service: ${service}
 
 Message:
 ${message}
-      `,
+`,
         });
 
         await transporter.sendMail({
@@ -131,17 +127,15 @@ Chicago, IL 60631
     }
 });
 
-app.get("*splat", (req, res, next) => {
-    if (req.path.includes(".")) {
+app.get(/.*/, (req, res, next) => {
+    if (!hasBuiltFrontend) return next();
+
+    if (req.path.startsWith("/assets/") || req.path.startsWith("/src/")) {
         return next();
     }
 
-    if (hasBuiltFrontend) {
-        res.setHeader("Cache-Control", "public, max-age=300, must-revalidate");
-        return res.sendFile(distIndex);
-    }
-
-    return next();
+    res.setHeader("Cache-Control", "public, max-age=300, must-revalidate");
+    return res.sendFile(distIndex);
 });
 
 app.listen(PORT, () => {
