@@ -1,17 +1,25 @@
 {
   "name": "chicago-hvac",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chicago HVAC website with React frontend and Express lead handling.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "build": "vite build",
+    "dev": "vite --host 0.0.0.0",
+    "dev:server": "nodemon server.js",
+    "preview": "vite preview --host 0.0.0.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pllanaio/chicago-hvac.git"
   },
-  "keywords": [],
+  "keywords": [
+    "hvac",
+    "chicago",
+    "react",
+    "vite"
+  ],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
@@ -20,9 +28,13 @@
   },
   "homepage": "https://github.com/pllanaio/chicago-hvac#readme",
   "dependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "nodemailer": "^8.0.10"
+    "nodemailer": "^8.0.10",
+    "vite": "^7.3.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
